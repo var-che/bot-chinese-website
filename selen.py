@@ -31,7 +31,7 @@ URL = 'http://gall.dcinside.com/board/lists/?id=' + original_id + '&page=1&excep
 
 driver.get(URL)
 #Get number of pages that this category have
-# id='dgn_btn_paging'
+# id='dgn_btn_paging'are
 
 page_count = driver.find_element_by_id('dgn_btn_paging')
 
@@ -69,7 +69,7 @@ while current_page <= num_of_pages:
   post_ids = driver.find_elements_by_class_name("t_notice")
 
   for post in post_ids:
-    if len(post.text) == 7:
+    if len(post.text) > 2:
       print(post.text)
       print('just appended to a list of ID posts.')
       id_list.append(post.text)
